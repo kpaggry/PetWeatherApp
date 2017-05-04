@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class MapService {
-  private baseUrl = 'http://maps.googleapis.com/maps/api/geocode/json?latlng=';
+  private baseUrl = 'https://maps.googleapis.com/maps/api/geocode/json?latlng=';
   private options = {
     enableHighAccuracy: true,
     maximumAge: 0

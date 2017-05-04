@@ -9,7 +9,7 @@ import { Pet, PetType, LocalStoreService } from '../shared';
 export class PetService {
   private pets: Pet[];
   private petTypes: PetType[];
-  private baseUrl = 'http://petshelterapi20170430022003.azurewebsites.net/api/pet/';
+  private baseUrl = 'https://petshelterapi20170430022003.azurewebsites.net/api/pet/';
   private headers = new Headers({'Content-Type': 'application/json'});
   private resData = {
     pets: [],

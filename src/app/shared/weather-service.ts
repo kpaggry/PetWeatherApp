@@ -5,7 +5,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class WeatherService {
-    private baseUrl = 'http://petshelterapi20170430022003.azurewebsites.net/api/weather/';
+    private baseUrl = 'https://petshelterapi20170430022003.azurewebsites.net/api/weather/';
 
   constructor(private http: Http){}
 
