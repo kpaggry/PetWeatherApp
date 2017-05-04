@@ -46,6 +46,7 @@ export class PetsDetailComponent implements OnInit, OnDestroy {
       });
     }else{
       this.notFound = true;
+      this.slimLoadingBarService.complete(); 
     }
   }
 
