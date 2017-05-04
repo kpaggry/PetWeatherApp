@@ -1,0 +1,26 @@
+<div class="col-md-12">
+  <div class="col-md-6">
+    <div class="pull-left">
+      <div *ngIf="isRain">
+        <img class="img-responsive"
+             src="../assets/umbrella.png"/>
+      </div>
+        <img class="img-responsive"
+             src="{{pet.breed.imgUrl}}"/>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="pull-right text-center" *ngIf="hasValue">
+      <div *ngIf="isRain">
+        <h2>Yup</h2>
+        <h4>It looks like {{pet.name}} is going to need one in {{pet.location}}</h4>
+      </div>
+      <div *ngIf="!isRain">
+        <h2>Nope</h2>
+        <h4>It looks like {{pet.name}} is not going to need one in {{pet.location}} afterall</h4>
+      </div>
+      <br />
+      <a [routerLink]="['']">Lookup a different pet</a>
+    </div>
+  </div>
+</div>

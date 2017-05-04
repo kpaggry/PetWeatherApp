@@ -1,0 +1,45 @@
+<h2 class="text-center">Does My Pet Need An Umbrella?</h2>
+<h3 class="text-center">Select a pet to find out.</h3>
+<table class="table table-hover">
+  <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Breed</th>
+      <th></th>
+  </tr>
+  <tr *ngFor="let pet of pets">
+    <td>{{pet.name}}</td>
+    <td>{{pet.type.name}}</td>
+    <td>{{pet.breed.name}}</td>
+    <td><a [routerLink]="['pet', pet.id]">View</a></td>
+  </tr>
+</table>
+
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li [ngClass]="{disabled:pageNumber === 1}">
+      <a (click)="toPage(pageNumber - 1)" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li *ngFor="let num of pagesList" [ngClass]="{active:pageNumber === num}">
+      <a (click)="toPage(num)">{{num}}</a>
+    </li>
+    <li [ngClass]="{disabled:pageNumber === totalPages}">
+      <a (click)="toPage(pageNumber + 1)" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<ng2-slim-loading-bar [color]="'blue'"></ng2-slim-loading-bar>
+
+<div *ngIf="loadMap">
+  <agm-map [latitude]="0" [longitude]="0" [zoom]="2">
+    <agm-marker *ngFor="let pet of pets"
+                  [latitude]="pet.latitude"
+                  [longitude]="pet.longitude"
+                  [title]="pet.name"
+                  [iconUrl]="getUrl(pet.type.name)"></agm-marker>
+  </agm-map>
+</div>
