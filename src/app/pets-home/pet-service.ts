@@ -57,6 +57,7 @@ export class PetService {
 
   getPet(id){
     let pets = this.localStore.getPetsInStore();
+    console.log(pets);
     if(pets){
       return pets.find(pet => pet.id == id);
     }

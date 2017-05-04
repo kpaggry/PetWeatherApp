@@ -33,7 +33,7 @@ import { AgmCoreModule } from '@agm/core';
     routing,
     SlimLoadingBarModule.forRoot(),
     LocalStorageModule.withConfig({
-            storageType: 'localStorage'
+      storageType: 'localStorage'
     }),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyC9Ow3429M6o2HHAVfpLV0J0thNgF6yZHo'

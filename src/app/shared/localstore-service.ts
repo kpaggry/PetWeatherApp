@@ -17,10 +17,12 @@ export class LocalStoreService {
   }
 
   getPetsInStore(){
-    return this.localStorageService.get('pets') as Pet[];
+    return JSON.parse(window.localStorage.getItem('pets'));
+    //return this.localStorageService.get('pets') as Pet[];
   }
 
   setPetIntoStore(pets: Pet[]){
-    this.localStorageService.set('pets', pets);
+    //this.localStorageService.set('pets', pets);
+    window.localStorage.setItem('pets', JSON.stringify(pets));
   }
 }
