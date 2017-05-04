@@ -1,13 +1,13 @@
 # PetWeatherApp
 
-##Dependencies
+## Dependencies
 1. [Node and NPM](https://nodejs.org/en/)
 2. [Angular CLI](https://github.com/angular/angular-cli)
 
 ## Setup
 
 1. cd into newly cloned repo.
-2. Run `npm install'
+2. Run `npm install`
 3. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
