@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-12"  *ngIf="hasValue">
   <div class="col-md-6">
     <div class="pull-left">
       <div *ngIf="isRain">
@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div class="pull-right text-center" *ngIf="hasValue">
+    <div class="pull-right text-center">
       <div *ngIf="isRain">
         <h2>Yup</h2>
         <h4>It looks like {{pet.name}} is going to need one in {{pet.location}}</h4>
@@ -24,3 +24,18 @@
     </div>
   </div>
 </div>
+
+<div class="nb-error" *ngIf="notFound">
+      <div class="error-code">404</div>
+      <h3 class="font-bold">We couldn't find the page..</h3>
+
+      <div class="error-desc">
+          Sorry, but the page you are looking for was either not found or does not exist. <br/>
+          Try refreshing the page or click the button below to go back to the Homepage.
+         <ul class="list-inline text-center text-sm">
+           <li class="list-inline-item"><a [routerLink]="['']" class="text-muted">Go to App</a></li>
+        </ul>
+      </div>
+  </div>
+
+  <ng2-slim-loading-bar [color]="'blue'"></ng2-slim-loading-bar>

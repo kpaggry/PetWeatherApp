@@ -17,6 +17,7 @@ export class PetsDetailComponent implements OnInit, OnDestroy {
   pet: Pet;
   isRain: boolean;
   hasValue: boolean = false;
+  notFound: boolean = false;
   private subscription: Subscription;
 
   constructor(private petService: PetService,
@@ -33,14 +34,19 @@ export class PetsDetailComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.slimLoadingBarService.start();
     this.pet = this.petService.getPet(this.id);
-    this.mapService.getAddy(this.pet.latitude, this.pet.longitude).then(res => {
-      this.pet.location = res
-      this.slimLoadingBarService.complete();
-    });
-    this.weatherService.makeItRain(this.pet.latitude, this.pet.longitude).then(res => {
-      this.isRain = res
-      this.hasValue = true;    
-    });
+    
+    if(this.pet != null){
+        this.mapService.getAddy(this.pet.latitude, this.pet.longitude).then(res => {
+        this.pet.location = res
+      });
+      this.weatherService.makeItRain(this.pet.latitude, this.pet.longitude).then(res => {
+        this.isRain = res
+        this.hasValue = true;
+        this.slimLoadingBarService.complete();  
+      });
+    }else{
+      this.notFound = true;
+    }
   }
 
   ngOnDestroy(){

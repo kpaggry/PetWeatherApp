@@ -31,8 +31,8 @@
             <option value="" selected>--Select Breed--</option>
             <option *ngFor="let breed of breeds" [ngValue]="breed">{{breed.name}}</option>
       </select>
-      <div class="text-danger" *ngIf="!newPetForm.controls['type'].valid && newPetForm.controls['type'].touched">
-        Please Enter a Type
+      <div class="text-danger" *ngIf="!newPetForm.controls['breed'].valid && newPetForm.controls['breed'].touched">
+        Please Enter a Breed
       </div>
     </div>
   </div>

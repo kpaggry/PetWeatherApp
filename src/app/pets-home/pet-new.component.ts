@@ -54,6 +54,7 @@ export class PetNewComponent implements OnInit {
   }
 
   onSelect(typeId) {
+    this.breeds = [];
     if(typeId != ""){
       //this.breeds = this.petTypes.find(type => type.id == parseInt(typeId)).breeds;
       this.breeds = this.petService.getBreeds(typeId);

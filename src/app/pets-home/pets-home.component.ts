@@ -24,7 +24,6 @@ export class PetsHomeComponent implements OnInit {
               private slimLoadingBarService: SlimLoadingBarService) { }
 
   ngOnInit() {
-    //this.petService.getPets().then(pets => this.pets = pets);
     this.slimLoadingBarService.start();
     this.petService.getPetsPerPage(this.pageNumber).then((res) => {
       this.pets = res.pets as Pet[];
